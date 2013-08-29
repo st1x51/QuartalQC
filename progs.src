@@ -1,0 +1,37 @@
+/*
++-----+
+|Progs|
++-----+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+
+| Scratch                                      Http://www.admdev.com/scratch |
++=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+| This file contains all a list of QuakeC files to compile into the final    |
+| output file (progs.dat by default)                                         |
++=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+*/
+
+../progs.dat                                        
+
+defs.qc   
+gyro_main.qc
+gyro_physics.qc
+gyro_forces.qc
+gyro_user.qc                                   
+subs.qc
+ai.qc
+main.qc                
+damage.qc                    
+player.qc
+crouch.qc
+client.qc                                          
+portal.qc
+usebutton.qc
+items.qc
+weapon.qc
+plats.qc
+doors.qc
+buttons.qc
+triggers.qc
+asstech.qc
+turret.qc
+extras_water.qc
+stuff.qc
