@@ -1,4 +1,3 @@
-
 //
 // LADDERS: Written by Frank Condello <pox@planetquake.com>
 //
@@ -36,39 +35,10 @@ void() ladder_touch =
 
 	// Null out gravity in PreThink
 	other.laddertime = other.zerogtime = time + 0.1;
-
-/*	FIXME! - Physics on a moving ladder don't quite work
-	// Factor in the parent train's movement
-	if (self.owner) {
-
-		// Stop all vertical movement
-		other.velocity_z = self.owner.velocity_z;
-
-		// Check if the player is moving sideways (don't go up/down)
-		if (v_right*(other.velocity - self.owner.velocity) > 25) {
-			other.velocity = self.owner.velocity;
-			other.origin = other.origin + v_right*0.5;
-			return;
-		}
-		else if (v_right*(other.velocity - self.owner.velocity) < -25) {
-			other.velocity = self.owner.velocity;
-			other.origin = other.origin - v_right*0.5;
-			return;
-		}
-
-		// Get the player's forward speed
-		fvel = v_forward*(other.velocity - self.owner.velocity);
-
-	} else {// Stationary
-*/
 		// Stop all vertical movement
 		other.velocity_z = 0;
 
 		// Check if the player is moving sideways (don't go up/down)
-		/*if (fabs(v_right*other.velocity) > 25) {
-			other.velocity = '0 0 0';
-			return;
-		}*/
 		if (v_right*other.velocity > 25) {
 			other.velocity = '0 0 0';
 			other.origin = other.origin + v_right*0.5;// boost strafes
@@ -163,12 +133,4 @@ void() func_ladder =
 {
 	InitTrigger();
 	self.touch = ladder_touch;
-
-/*	FIXME! - Physics on a moving ladder don't quite work
-	// Attach the ladder to it's parent
-	if (self.target) {
-		self.think = train_ext_linkchild;
-		self.nextthink = time + 0.2;
-	}
-*/
 };
