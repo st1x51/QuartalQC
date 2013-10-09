@@ -1056,16 +1056,33 @@ void() func_glass=
    precache_sound( self.noise1 );
    precache_sound( self.noise2 );
 };
-//Place Model Code
+void() model_touch =
+{
+   if (other.classname != "player")
+      return;
+   
+   if (other.health <= 0)
+   {
+      return;
+   }
+
+   if ((!other.flags & FL_ONGROUND) && (other.absmin_z >= self.absmax_z - 2))
+      other.flags = other.flags | FL_ONGROUND;
+};
+
+/*
+Place model code
+How to use:
+add key "model" with value "path to model"
+*/
 void() place_model =
 {
-//	self.touch = armor_touch;
-    self.solid = SOLID_BBOX;
+    	self.movetype = MOVETYPE_STEP;
+	self.solid = SOLID_BBOX;
 	precache_model (self.model);
 	setmodel (self, self.model);
 	self.skin = 0;
-	setsize (self, '-16 -16 0', '16 16 56');
-
+	self.touch = model_touch;
 };						
 void() Spawn_Cube =
 	{
@@ -1100,4 +1117,4 @@ void() info_cube_spawner =					//This is the function that will go in the map
 	self.movetype = MOVETYPE_NONE;			//its not going to move
 	self.model = "";						//We don't want to see it
 	self.use = Spawn_Cube;					//When used we want it to spawn a cube
-} 
+}�
