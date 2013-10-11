@@ -789,7 +789,6 @@ void() ass_cube =
         self.angles = '0 0 0';
 
         setmodel (self, "progs/cube.bsp");
-        setsize (self, '-16 -16 -18', '16 16 18');
         self.classname = "cube";
         self.solid = SOLID_BBOX;
         self.movetype = MOVETYPE_BOUNCE;
@@ -799,9 +798,9 @@ void() ass_cube =
         self.touch = asscube_push;
         self.nextthink = time + 0.1;
         self.think = asscube_think;
-		Gyro_Object_Activate(self, 800);
-		Gyro_Object_SetBouyancy(self, 900);
-		Gyro_Object_SetAerodynamics(self, 2400);	
+	Gyro_Object_Activate(self, 800);
+	Gyro_Object_SetBouyancy(self, 900);
+	Gyro_Object_SetAerodynamics(self, 2400);	
 };
 
 void() ass_lovecube =
@@ -811,8 +810,6 @@ void() ass_lovecube =
         self.angles = '0 0 0';
 
         setmodel (self, "progs/lovecube.bsp");
-        setsize (self, '-16 -16 -18', '16 16 18');
-
         self.classname = "cube";
         self.solid = SOLID_BBOX;
         self.movetype = MOVETYPE_BOUNCE;
@@ -822,9 +819,9 @@ void() ass_lovecube =
         self.touch = asscube_push;
         self.nextthink = time + 0.1;
         self.think = asscube_think;
-		Gyro_Object_Activate(self, 800);
-		Gyro_Object_SetBouyancy(self, 900);
-		Gyro_Object_SetAerodynamics(self, 2400);	
+	Gyro_Object_Activate(self, 800);
+	Gyro_Object_SetBouyancy(self, 900);
+	Gyro_Object_SetAerodynamics(self, 2400);	
 };
 
 void() ass_dtcube =
@@ -833,8 +830,6 @@ void() ass_dtcube =
         self.mangle = self.angles;
         self.angles = '0 0 0';
         setmodel (self, "progs/dtcube.bsp");
-        setsize (self, '-16 -16 -18', '16 16 18');
-
         self.classname = "cube";
         self.solid = SOLID_BBOX;
         self.movetype = MOVETYPE_BOUNCE;
@@ -844,9 +839,9 @@ void() ass_dtcube =
         self.touch = asscube_push;
         self.nextthink = time + 0.1;
         self.think = asscube_think;
-		Gyro_Object_Activate(self, 800);
-		Gyro_Object_SetBouyancy(self, 900);
-		Gyro_Object_SetAerodynamics(self, 2400);	
+	Gyro_Object_Activate(self, 800);
+	Gyro_Object_SetBouyancy(self, 900);
+	Gyro_Object_SetAerodynamics(self, 2400);	
 };
 
 
