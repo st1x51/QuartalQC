@@ -1053,16 +1053,22 @@ void() func_glass=
 };
 void() model_touch =
 {
-   if (other.classname != "player")
-      return;
-   
-   if (other.health <= 0)
-   {
-      return;
-   }
-
-   if ((!other.flags & FL_ONGROUND) && (other.absmin_z >= self.absmax_z - 2))
-      other.flags = other.flags | FL_ONGROUND;
+local vector v;
+local float yaw;
+ 
+if (other.classname != "player") 
+	return;
+if (other.groundentity == self ) 
+	return;
+if (other.origin_z + other.mins_z + 8 >= self.absmax_z)
+{
+        if ((!other.flags & FL_ONGROUND))
+        other.flags = other.flags + FL_ONGROUND;
+        return;
+}
+	v = self.origin - other.origin;
+	yaw = vectoyaw( v );
+	walkmove( yaw, frametime * 50 );
 };
 
 /*
