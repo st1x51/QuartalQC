@@ -18,7 +18,7 @@ void() use_cmd =
 	local vector source;
 	local vector org;
 	makevectors(self.v_angle);
-	source = self.origin + '0 0 16';
+	source = self.origin + '0 0 22';
 	traceline(source, source + v_forward * 70, 0, self);
 	if (trace_fraction == 1)
 	{
